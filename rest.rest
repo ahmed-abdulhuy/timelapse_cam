@@ -1,0 +1,66 @@
+POST /RPC2 HTTP/1.1
+Host: 192.168.8.100
+Accept: application/json, text/plain, */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Length: 137
+Content-Type: application/json
+Cookie: WebClientHttpSessionID=8ecb8f7c1dec78fcea6bb22fae8fdbfc
+Origin: http://192.168.8.100
+Referer: http://192.168.8.100/
+User-Agent: Mozilla/5.0
+
+{
+  "method": "mediaFileFind.findFile",
+  "params": {
+    "condition": {
+      "StartTime": "2024-09-21 00:00:00",
+      "EndTime": "2024-09-21 23:59:59",
+      "Types": [
+        "jpg"
+      ],
+      "VideoStream": "Main",
+      "Channel": -1
+    }
+  },
+  "id": 380,
+  "session": "f255debc3dc220258036196a694f9776",
+  "object": 2757117936
+}
+
+##################
+POST /RPC2 HTTP/1.1
+Host: 192.168.8.100
+Accept: application/json, text/plain, */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Content-Length: 137
+Content-Type: application/json
+Cookie: WebClientHttpSessionID=8ecb8f7c1dec78fcea6bb22fae8fdbfc
+Origin: http://192.168.8.100
+Referer: http://192.168.8.100/
+User-Agent: Mozilla/5.0
+
+{
+  "method": "mediaFileFind.findNextFile",
+  "params": {
+    "count": 1024
+  },
+  "id": 381,
+  "session": "f255debc3dc220258036196a694f9776",
+  "object": 2757117936
+}
+
+
+#########
+GET /cgi-bin/RPC_Loadfile/mnt/dvr/2024-09-22/0/dav/00/0/3/1175710/00.00.02-00.00.02[R][0@0][0].jpg HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Cookie: WebClientHttpSessionID=12f0dbd373d6635c11de96d090bb0bbd
+Host: 192.168.8.100
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
