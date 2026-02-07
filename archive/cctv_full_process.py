@@ -3,10 +3,10 @@ import os
 import math
 from tqdm import tqdm
 from create_cctv_video import VideoCreator
-from download_scraper import SnapshotDownloaderScraper
+from archive.download_scraper import SnapshotDownloaderScraper
 from filter_out_intervals import FilterOutOfIntervalSnapshots
-from json_file_processing import SnapshotJsonProcessing
-from request_files import SnapshotPathFetcher
+from archive.json_file_processing import SnapshotJsonProcessing
+from archive.request_files import SnapshotPathFetcher
 from dotenv import load_dotenv
 
 class CCTVVideoCreator:

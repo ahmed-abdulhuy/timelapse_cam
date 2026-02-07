@@ -41,10 +41,18 @@ class ProcessTLVideo:
         brightness = np.array(grayImage).mean()
 
         # select a threshold brightness
-        threshold = 230 # Varies from 0 to 255
+        threshold = 100 # Varies from 0 to 255
 
         # is it day time?
         return brightness > threshold
+    
+    def isImageInDayTimeV2(self, image):
+        hsvImage = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+        brightness = np.sum(hsvImage[:, :, 2])
+        area = image.shape[0] * image.shape[1]
+        avg= brightness / area
+        threshold = 120
+        return avg > threshold
 
 
     def createFramePath(self):
@@ -95,7 +103,6 @@ class ProcessTLVideo:
     
                     if self.isImageInDayTime(frame):
                         self.writeFrame(frame)
-                    self.writeFrame(frame)
                     pBar.update(1)
 
             except KeyboardInterrupt:
@@ -182,7 +189,7 @@ if __name__ == "__main__":
     mainPath = os.path.join('timelapse_cams', 'onprogress')
     # camList = os.listdir(os.path.join(mainPath, 'frames'))
     # print("Frames Directories: ", camList)
-    # camList = ['1', '3' ]
+    # camList = [ '1', '2', '3' ]
     camList = ['3']
     FPS = 30
     processTLVideo = ProcessTLVideo(mainPath, camList, FPS)
